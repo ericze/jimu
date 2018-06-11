@@ -1,14 +1,13 @@
-package com.zero.jimu.mapper;
+package com.zero.jimu.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 import com.zero.jimu.entity.User;
 
 @Mapper
-public interface UserMapper {
+public interface UserDao {
 
     List<User> findAll();
 }
