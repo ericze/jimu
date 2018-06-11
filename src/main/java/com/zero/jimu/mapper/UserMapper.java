@@ -10,6 +10,5 @@ import com.zero.jimu.entity.User;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from jm_user")
     List<User> findAll();
 }
