@@ -1,15 +1,15 @@
 package com.zero.jimu.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 
 import com.zero.jimu.entity.Space;
 
+import java.util.List;
+
 @Mapper
 public interface SpaceDao {
-    @Insert("INSERT INTO jm_space(name, address, mobile, title, about, head_pic, is_recommend, follownum,reviewnum) VALUES(#{jm_space.name}, #{jm_space.address}, #{jm_space.mobile}, #{jm_space.title}, #{jm_space.about}, #{jm_space.head_pic}, #{jm_space.is_recommend}, #{jm_space.follownum},#{jm_space.reviewnum})")
-    @Options(useGeneratedKeys = true, keyProperty = "jm_space.id")
-    void add(@Param("space") Space space);
+    int insertSpace(@Param("space")Space space);
+    List<Space> selectAll();
+    Space selectSpaceById(int id);
 }

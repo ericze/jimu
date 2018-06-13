@@ -3,11 +3,11 @@ package com.zero.jimu.entity;
 import java.math.BigInteger;
 
 public class Space {
-    public BigInteger getId() {
+    public int getId() {
         return id;
     }
 
-    private void setId(BigInteger id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -67,15 +67,24 @@ public class Space {
         this.is_recommend = is_recommend;
     }
 
-    public int getFollownumber() {
-        return follownumber;
+
+    public int getFollownum() {
+        return follownum;
     }
 
-    public void setFollownumber(int follownumber) {
-        this.follownumber = follownumber;
+    public void setFollownum(int follownum) {
+        this.follownum = follownum;
     }
 
-    private BigInteger id;
+    public int getReviewnum() {
+        return reviewnum;
+    }
+
+    public void setReviewnum(int reviewnum) {
+        this.reviewnum = reviewnum;
+    }
+
+    public int id;
     public String title;
     public String name;
     public String address;
@@ -83,5 +92,6 @@ public class Space {
     public String head_pic;
     public String about;
     public int is_recommend;
-    public int follownumber;
+    public int follownum;
+    public int reviewnum;
 }
