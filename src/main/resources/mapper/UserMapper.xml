@@ -13,4 +13,12 @@
     <select id="findAll" resultMap="userMap">
             select * from jm_user
      </select>
+
+    <select resultType="com.zero.jimu.entity.User" id="findByOpenIdLike">
+        select * from jm_user where openid = #{openid};
+    </select>
+
+    <insert  useGeneratedKeys="true" keyProperty="user.id" parameterType="com.zero.jimu.entity.User" id="insertUser">
+          INSERT INTO jm_user(openid, sessionkey) VALUES(#{user.openid}, #{user.sessionkey});
+    </insert>
 </mapper>

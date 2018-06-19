@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @ResponseBody
 @Controller
 public class HomeController {
-    @RequestMapping("/home")
+    @RequestMapping("/")
     public String HomeData(){
-        return "推荐，最近访问，我的关注";
+        return "Hello,Jimu";
     }
 }
