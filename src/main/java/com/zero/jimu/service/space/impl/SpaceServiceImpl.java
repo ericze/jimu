@@ -26,7 +26,9 @@ public class SpaceServiceImpl implements SpaceService{
     public List<Space> selectAll(){
         return spaceDao.selectAll();
     }
+
     //根据id查询对应的空间详情
+    @Override
     public Space selectSpaceById(int id){
         return spaceDao.selectSpaceById(id);
     }

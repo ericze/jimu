@@ -83,7 +83,16 @@ public class Space {
     public void setReviewnum(int reviewnum) {
         this.reviewnum = reviewnum;
     }
+    public String getCreated_time() {
+        return created_time;
+    }
 
+    public String getUpdate_time() {
+        return update_time;
+    }
+
+    public String created_time;
+    public String update_time;
     public int id;
     public String title;
     public String name;

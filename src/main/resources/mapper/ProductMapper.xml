@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zero.jimu.dao.ProductDao">
+
+    <resultMap type="Product" id="result_base">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="title" column="title"/>
+        <result property="about" column="about"/>
+        <result property="trademark" column="trademark"/>
+        <result property="price" column="price"/>
+        <result property="detail" column="detail"/>
+        <result property="repertory" column="repertory"/>
+        <result property="categoryid" column="categoryid"/>
+        <result property="brandid" column="brandid"/>
+        <result property="type" column="type"/>
+        <result property="is_recommend" column="is_recommend"/>
+        <result property="created_time" column="created_time"/>
+        <result property="update_time" column="update_time"/>
+    </resultMap>
+
+    <!-- 一对多映射 -->
+    <resultMap type="Product" id="result" extends="result_base">
+        <collection property="picList" javaType="ArrayList" column="productid" ofType="com.zero.jimu.entity.ProductImage"
+                    select="test.data.AttachmentMapper.selectByMailId"/>
+    </resultMap>
+
+    <insert  useGeneratedKeys="true" keyProperty="product.id" parameterType="com.zero.jimu.entity.Product" id="insertProduct">
+          INSERT INTO jm_product(name, title, about, trademark, price, detail, repertory, categoryid,brandid,is_hot,type,is_recommend) VALUES(#{product.name}, #{product.title}, #{product.about}, #{product.trademark}, #{product.price}, #{product.detail}, #{product.repertory}, #{product.categoryid},#{product.brandid},#{product.is_hot},#{product.type},#{product.is_recommend});
+    </insert>
+
+    <select resultType="com.zero.jimu.entity.Space" id="selectAll">
+        select * from jm_product;
+    </select>
+
+    <select resultType="com.zero.jimu.entity.Space" id="selectSpaceById">
+        select a.*,b.* from jm_product where id = #{id};
+    </select>
+</mapper>

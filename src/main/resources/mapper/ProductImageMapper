@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zero.jimu.dao.SpaceDao">
+    <insert  useGeneratedKeys="true" keyProperty="space.id" parameterType="com.zero.jimu.entity.Space" id="insertSpace">
+          INSERT INTO jm_space(name, address, mobile, title, about, head_pic, is_recommend, follownum,reviewnum) VALUES(#{space.name}, #{space.address}, #{space.mobile}, #{space.title}, #{space.about}, #{space.head_pic}, #{space.is_recommend}, #{space.follownum},#{space.reviewnum});
+    </insert>
+
+    <select resultType="com.zero.jimu.entity.Space" id="selectAll">
+        select * from jm_space;
+    </select>
+
+    <select resultType="com.zero.jimu.entity.Space" id="selectSpaceById">
+        select * from jm_space where id = #{id};
+    </select>
+</mapper>

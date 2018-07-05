@@ -92,7 +92,6 @@ public class LoginController {
             //如果有则返回此条数据的id
             User user = us.findByOpenIdLike(openid);
             if(user!=null){
-
                 map.put("userid", user.getId());
                 map.put("code","0");
             }else{

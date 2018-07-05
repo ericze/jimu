@@ -10,6 +10,17 @@ public class User {
     public int is_invalid;
     public int user_type;
 
+    public String getCreated_time() {
+        return created_time;
+    }
+
+    public String getUpdate_time() {
+        return update_time;
+    }
+
+    public String created_time;
+    public String update_time;
+
     public int getId() {
         return id;
     }
